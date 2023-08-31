@@ -95,7 +95,7 @@ public class RadioTest {
 
         rad.increaseWaveOn1();
 
-        Assertions.assertEquals(0, getCurrentWave());
+        Assertions.assertEquals(0, rad.getCurrentWave());
     }
 
     @Test
