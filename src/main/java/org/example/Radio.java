@@ -2,7 +2,7 @@ package org.example;
 
 public class Radio {
     private int maxWave = 9;
-    private int maxWave = 0;
+    private int minWave = 0;
     private int maxVolume = 100;
     private int minVolume = 0;
     private int currentWave;
@@ -61,22 +61,6 @@ public class Radio {
         currentVolume = newCurrentVolume;
     }
 
-    // public void maxWave() {
-    //     currentWave = 9;
-    // }
-
-    // public void minWave() {
-    //     currentWave = 0;
-    // }
-
-    // public void maxVolume() {
-    //     currentVolume = 100;
-    // }
-
-    // public void minVolume() {
-    //     currentVolume = 0;
-    // }
-
     public void increaseWaveOn1() {
         int target = currentWave + 1;
         setCurrentWave(target);
@@ -96,4 +80,19 @@ public class Radio {
         int target = currentVolume - 1;
         setCurrentVolume(target);
     }
+     // public void maxWave() {
+    //     currentWave = 9;
+    // }
+
+    // public void minWave() {
+    //     currentWave = 0;
+    // }
+
+    // public void maxVolume() {
+    //     currentVolume = 100;
+    // }
+
+    // public void minVolume() {
+    //     currentVolume = 0;
+    // }
 }
