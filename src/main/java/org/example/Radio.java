@@ -25,11 +25,11 @@ public class Radio {
         return currentVolume;
     }
 
-    public int getMaxtWave() {
+    public int getMaxWave() {
         return maxWave;
     }
 
-    public int getMintWave() {
+    public int getMinWave() {
         return minWave;
     }
 
