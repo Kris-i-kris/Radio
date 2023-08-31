@@ -1,68 +1,70 @@
 package org.example;
 
 public class Radio {
-    public int currentWave;
+    private int currentWave;
+    private int currentVolume;
 
     public int getCurrentWave() {
         return currentWave;
     }
 
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
+
     public void setCurrentWave(int newCurrentWave) {
         if (newCurrentWave < 0) {
-            return;
+            newCurrentWave = 9;
         }
         if (newCurrentWave > 9) {
+            newCurrentWave = 0;
+        }
+        currentWave = newCurrentWave;
+    }
+
+    public void setCurrentVolume(int newCurrentVolume) {
+        if (newCurrentVolume < 0) {
             return;
         }
-        currentWave = newCurrentWave;
+        if (newCurrentVolume > 100) {
+            return;
+        }
+        currentVolume = newCurrentVolume;
     }
 
-    public void setCurrentWaveNext(int newCurrentWave) {
-        if (newCurrentWave == 9) {
-            newCurrentWave = 0;
-        } else {
-            newCurrentWave += 1;
-        }
-        currentWave = newCurrentWave;
-
+    public void maxWave() {
+        currentWave = 9;
     }
 
-    public void setCurrentWavePrev(int newCurrentWave) {
-        if (newCurrentWave == 0) {
-            newCurrentWave = 9;
-        } else {
-            newCurrentWave -= 1;
-        }
-        currentWave = newCurrentWave;
+    public void minWave() {
+        currentWave = 0;
     }
 
-    public int volume;
-
-    public int getVolume() {
-        return volume;
+    public void maxVolume() {
+        currentVolume = 100;
     }
 
-    public void setVolume(int newVolume) {
-        if (newVolume > 100) {
-            newVolume = 100;
-        }
-        if (newVolume < 0) {
-            newVolume = 0;
-        }
-        volume = newVolume;
+    public void minVolume() {
+        currentVolume = 0;
     }
 
-    public void setVolumePlus(int newVolume) {
-        if (newVolume < 100) {
-            newVolume += 1;
-        }
-        volume = newVolume;
+    public void increaseWaveOn1() {
+        int target = currentWave + 1;
+        setCurrentWave(target);
     }
 
-    public void setVolumeMinus(int newVolume) {
-        if (newVolume > 0) {
-            newVolume -= 1;
-        }
-        volume = newVolume;
+    public void reductionWaveOn1() {
+        int target = currentWave - 1;
+        setCurrentWave(target);
+    }
+
+    public void increaseVolumeOn1() {
+        int target = currentVolume + 1;
+        setCurrentVolume(target);
+    }
+
+    public void reductionVolumeOn1() {
+        int target = currentVolume - 1;
+        setCurrentVolume(target);
     }
 }
