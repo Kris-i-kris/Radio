@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class RadioTest {
-    
+
     @Test
     public void shouldSetWave() {
         Radio rad = new Radio();
@@ -14,9 +14,9 @@ public class RadioTest {
         Assertions.assertEquals(5, rad.getCurrentWave());
     }
 
-     @Test
+    @Test
     public void shouldSetWaveCon() {
-        Radio rad = new Radio(101);
+        Radio rad = new Radio(100);
 
         rad.setCurrentWave(77);
 
@@ -35,15 +35,15 @@ public class RadioTest {
     @Test
     public void shouldSetMaxWave() {
         Radio rad = new Radio();
-        
+
         Assertions.assertEquals(9, rad.getMaxWave());
     }
 
-     @Test
+    @Test
     public void shouldSetMaxWaveCon() {
-        Radio rad = new Radio(101);
+        Radio rad = new Radio(100);
 
-        Assertions.assertEquals(100, rad.getMaxWave());
+        Assertions.assertEquals(99, rad.getMaxWave());
     }
 
     @Test
@@ -100,8 +100,8 @@ public class RadioTest {
 
     @Test
     public void increaseWaveOn1Con() {
-        Radio rad = new Radio(101);
-        rad.setCurrentWave(100);
+        Radio rad = new Radio(100);
+        rad.setCurrentWave(99);
 
         rad.increaseWaveOn1();
 
@@ -118,14 +118,14 @@ public class RadioTest {
         Assertions.assertEquals(9, rad.getCurrentWave());
     }
 
-     @Test
+    @Test
     public void reductionWaveOn1Con() {
-        Radio rad = new Radio(101);
+        Radio rad = new Radio(100);
         rad.setCurrentWave(0);
 
         rad.reductionWaveOn1();
 
-        Assertions.assertEquals(100, rad.getCurrentWave());
+        Assertions.assertEquals(99, rad.getCurrentWave());
     }
 
     @Test
@@ -134,7 +134,7 @@ public class RadioTest {
         rad.setCurrentVolume(100);
 
         rad.increaseVolumeOn1();
-        
+
         Assertions.assertEquals(100, rad.getCurrentVolume());
     }
 
@@ -148,5 +148,7 @@ public class RadioTest {
         Assertions.assertEquals(0, rad.getCurrentVolume());
     }
 }
+
+
 
 
