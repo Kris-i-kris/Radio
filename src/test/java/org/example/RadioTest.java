@@ -13,6 +13,20 @@ public class RadioTest {
 
         Assertions.assertEquals(5, rad.getCurrentWave());
     }
+    
+    @Test
+    public void shouldSetQuantityRadioWave() {
+        Radio rad = new Radio();
+
+        Assertions.assertEquals(10, rad.getQuantityRadioWave());
+    }
+
+    @Test
+    public void shouldSetQuantityRadioWave() {
+        Radio rad = new Radio(100);
+
+        Assertions.assertEquals(100, rad.getQuantityRadioWave());
+    }
 
     @Test
     public void shouldSetWaveCon() {
