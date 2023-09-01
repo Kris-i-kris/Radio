@@ -1,20 +1,28 @@
 package org.example;
 
 public class Radio {
-    private int maxWave = 9;
+    private int quantityRadioWave = 10;
+    private int maxWave = quantityRadioWave - 1;
+    ;
     private int minWave = 0;
     private int maxVolume = 100;
     private int minVolume = 0;
     private int currentWave;
     private int currentVolume;
 
-    public Radio(int maxWave) {
-        this.maxWave = maxWave;
+    public Radio(int quantityRadioWave) {
+        this.quantityRadioWave = quantityRadioWave;
+        this.minWave = minWave;
+        this.maxWave = quantityRadioWave - 1;
         this.currentWave = maxWave;
     }
 
     public Radio() {
-        this.maxWave = maxWave;
+        this.maxWave = quantityRadioWave - 1;
+    }
+
+    public int getQuantityRadioWave() {
+        return quantityRadioWave;
     }
 
     public int getCurrentWave() {
@@ -80,7 +88,7 @@ public class Radio {
         int target = currentVolume - 1;
         setCurrentVolume(target);
     }
-     // public void maxWave() {
+    // public void maxWave() {
     //     currentWave = 9;
     // }
 
