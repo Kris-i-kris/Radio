@@ -22,7 +22,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSetQuantityRadioWave() {
+    public void shouldSetQuantityRadioWaveCon() {
         Radio rad = new Radio(100);
 
         Assertions.assertEquals(100, rad.getQuantityRadioWave());
