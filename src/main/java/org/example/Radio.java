@@ -3,7 +3,6 @@ package org.example;
 public class Radio {
     private int quantityRadioWave = 10;
     private int maxWave = quantityRadioWave - 1;
-    ;
     private int minWave = 0;
     private int maxVolume = 100;
     private int minVolume = 0;
