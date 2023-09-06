@@ -1,8 +1,28 @@
 package org.example;
 
 public class Radio {
+    private int quantityRadioWave = 10;
+    private int maxWave = quantityRadioWave - 1;
+    private int minWave = 0;
+    private int maxVolume = 100;
+    private int minVolume = 0;
     private int currentWave;
     private int currentVolume;
+
+    public Radio(int quantityRadioWave) {
+        this.quantityRadioWave = quantityRadioWave;
+        this.minWave = minWave;
+        this.maxWave = quantityRadioWave - 1;
+        this.currentWave = maxWave;
+    }
+
+    public Radio() {
+        this.maxWave = quantityRadioWave - 1;
+    }
+
+    public int getQuantityRadioWave() {
+        return quantityRadioWave;
+    }
 
     public int getCurrentWave() {
         return currentWave;
@@ -12,40 +32,40 @@ public class Radio {
         return currentVolume;
     }
 
+    public int getMaxWave() {
+        return maxWave;
+    }
+
+    public int getMinWave() {
+        return minWave;
+    }
+
+    public int getMaxVolume() {
+        return maxVolume;
+    }
+
+    public int getMinVolume() {
+        return minVolume;
+    }
+
     public void setCurrentWave(int newCurrentWave) {
-        if (newCurrentWave < 0) {
-            newCurrentWave = 9;
+        if (newCurrentWave < minWave) {
+            newCurrentWave = maxWave;
         }
-        if (newCurrentWave > 9) {
-            newCurrentWave = 0;
+        if (newCurrentWave > maxWave) {
+            newCurrentWave = minWave;
         }
         currentWave = newCurrentWave;
     }
 
     public void setCurrentVolume(int newCurrentVolume) {
-        if (newCurrentVolume < 0) {
+        if (newCurrentVolume < minVolume) {
             return;
         }
-        if (newCurrentVolume > 100) {
+        if (newCurrentVolume > maxVolume) {
             return;
         }
         currentVolume = newCurrentVolume;
-    }
-
-    public void maxWave() {
-        currentWave = 9;
-    }
-
-    public void minWave() {
-        currentWave = 0;
-    }
-
-    public void maxVolume() {
-        currentVolume = 100;
-    }
-
-    public void minVolume() {
-        currentVolume = 0;
     }
 
     public void increaseWaveOn1() {
@@ -67,4 +87,19 @@ public class Radio {
         int target = currentVolume - 1;
         setCurrentVolume(target);
     }
+    // public void maxWave() {
+    //     currentWave = 9;
+    // }
+
+    // public void minWave() {
+    //     currentWave = 0;
+    // }
+
+    // public void maxVolume() {
+    //     currentVolume = 100;
+    // }
+
+    // public void minVolume() {
+    //     currentVolume = 0;
+    // }
 }
